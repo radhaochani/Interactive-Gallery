@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Moodboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="gallery-wrapper">
+        <header class="gallery-header">
+            <h1><i class="fas fa-sparkles"></i> My Creative <span>Oasis</span></h1>
+            <p>A beautifully curated aesthetic space for my favorite memes, arts, and cute vibes.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterGallery('all')">Show All</button>
+                <button class="filter-btn" onclick="filterGallery('memes')">Tech Humor</button>
+                <button class="filter-btn" onclick="filterGallery('cute-pets')">Cute Companions</button>
+                <button class="filter-btn" onclick="filterGallery('scenery')">Aesthetic Arts</button>
+                <button class="filter-btn" onclick="filterGallery('chibi')">Chibi Vibes</button>
+            </div>
+        </header>
+
+        <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <button class="arrow-btn prev-arrow" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Popup View">
+            <p id="lightbox-caption"></p>
+        </div>
+        <button class="arrow-btn next-arrow" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
