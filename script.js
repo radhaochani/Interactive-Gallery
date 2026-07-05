@@ -101,9 +101,8 @@ const lightboxImg = document.getElementById("lightbox-img");
 const lightboxCaption = document.getElementById("lightbox-caption");
 
 let currentImgIndex = 0;
-let visibleImages = [...galleryData]; // Filtered images track karne ke liye
+let visibleImages = [...galleryData]; 
 
-// 2. Render Gallery Function (Bina description ke cards)
 function renderGallery(items) {
     gridContainer.innerHTML = "";
     items.forEach((item, index) => {
@@ -125,7 +124,7 @@ function renderGallery(items) {
 
 // 3. Filter Function
 function filterGallery(category) {
-    // Button Active State styling change karne ke liye
+
     const buttons = document.querySelectorAll(".filter-btn");
     buttons.forEach(btn => btn.classList.remove("active"));
     event.target.classList.add("active");
@@ -137,7 +136,7 @@ function filterGallery(category) {
     renderGallery(visibleImages);
 }
 
-// 4. Lightbox Functions (Popup modal aur dynamic next/prev button)
+
 function openLightbox(index) {
     currentImgIndex = index;
     lightboxImg.src = visibleImages[currentImgIndex].imgSrc;
@@ -151,7 +150,7 @@ function closeLightbox() {
 function changeImage(direction) {
     currentImgIndex += direction;
     
-    // Loop navigation (agar end par pohoch jayein toh wapas start)
+    
     if (currentImgIndex >= visibleImages.length) currentImgIndex = 0;
     if (currentImgIndex < 0) currentImgIndex = visibleImages.length - 1;
     
@@ -159,7 +158,6 @@ function changeImage(direction) {
     lightboxCaption.innerText = visibleImages[currentImgIndex].title;
 }
 
-// Page load hote hi saari images show karne ke liye initialization
 window.onload = () => {
     renderGallery(galleryData);
 };
